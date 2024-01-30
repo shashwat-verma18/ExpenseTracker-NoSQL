@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js" defer></script>
+    <script src="tracker.js" defer></script>
+</head>
+<body>
+    
+    <ul id="nav">
+        <li class="nav_li"><a class="li_href" href="dashboard.html">Dashboard</a></li>
+        <li class="nav_li"><a class="li_href" href="addExpense.html">Add Expense</a></li>
+        <li class="nav_li" id="active"><a id="report" class="li_href" href="reportGeneration.html" style="display:none;">Report Generation</a></li>
+        <button id="logout" class="logOut" onclick="logOut()">Log Out</button>
+        <button id="leaderBoard" class="logOut" onclick="downloadReport(event)" style="display: none;">Download Report</button>
+        <p id="premiumMsg" style="float: right; margin-top: 17px; display: none;">You are a Premium User !</p>    
+    </ul>
+
+    <h3 style="color: rgb(0, 139, 194);">Report Generation History</h3>
+   
+    <table id="reportGenTable">
+        <tr>
+        <th style="width: 5%;">Sl No.</th>    
+        <th>Date</th>
+        <th style="width: 75%;">URL</th>
+        </tr>
+      </table>
+    <br>
+    
+    
+    
+    
+
+</body>
+</html>

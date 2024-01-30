@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js" defer></script>
+    <script src="tracker.js" defer></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js" defer></script>
+</head>
+<body>
+    
+    <ul id="nav">
+        <li class="nav_li" id="active"><a class="li_href" href="dashboard.html">Dashboard</a></li>
+        <li class="nav_li"><a class="li_href" href="addExpense.html">Add Expense</a></li>
+        <li class="nav_li"><a id="report" class="li_href" href="reportGeneration.html" style="display:none;">Report Generation</a></li>
+        <button id="logout" class="logOut" onclick="logOut()">Log Out</button>
+        <button id="premium" class="logOut" onclick="premium(event)">Buy Premium</button>
+        <button id="leaderBoard" class="logOut" onclick="showLeaderboard(event)" style="display: none;">Show LeaderBoard</button>
+        <p id="premiumMsg" style="float: right; margin-top: 17px; display: none;">You are a Premium User !</p>
+    </ul>
+
+    <div class="container">
+
+        <div style="font-size: 13px; display: flex; float: right; height: min-content;">
+            <label style="margin-top:7px; margin-right: 7px; float: right;">Records per Page :</label>
+            <select id="perPage" style="width: max-content; height: max-content; margin: 0px;">
+                <option id="10" value="10">10</option>
+                <option id="25" value="25">25</option>
+                <option id="50" value="50">50</option>
+            </select>
+        </div>
+
+
+        <section class="expenses">
+            <h3 style="margin-top: 40px;">Expenses</h3>
+            
+            <p id='dashMsg' class="error-message"></p>
+
+            
+            <div>
+            <ul id="listExpenses" class="listExpenses">
+                
+            </ul>
+            </div>
+
+        </section>
+
+        <div id="pagination">
+
+        </div>
+
+        <section class="leaderBoards">
+            <h3 id='leaderTitle' style="display: none;">Leaderboard</h3>
+            <ul id="listLeaderboard" class="listExpenses" style="display: none;">
+                
+            </ul>
+
+        </section>
+
+    </div>
+
+    
+</body>
+</html>

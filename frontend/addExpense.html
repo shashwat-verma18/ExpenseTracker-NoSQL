@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Expense</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
+    <script src="tracker.js" defer></script>
+</head>
+<body>
+    
+    <ul id="nav">
+        <li class="nav_li"><a class="li_href" href="dashboard.html">Dashboard</a></li>
+        <li class="nav_li" id="active"><a class="li_href" href="addExpense.html">Add Expense</a></li>
+        <li class="nav_li"><a id="report" class="li_href" href="reportGeneration.html" style="display:none;">Report Generation</a></li>
+        <button id="logout" class="logOut" onclick="logOut()">Log Out</button>
+        <p id="premiumMsg" style="float: right; margin-top: 17px; display: none;">You are a Premium User !</p>    </ul>
+
+    </ul>
+
+    <div class="container">
+
+        <form id="myForm" onsubmit="addExpense(event)" method="POST">
+            <label for="amount">Amount:</label>
+            <div class="input-group-text">
+                <div id="sym">
+                <div id="inp-txt">₹</div>
+                </div>
+                <input type="number" id="amt_inp" name="amt_inp" required>
+            </div>
+
+            <label for="description">Description:</label>
+            <input type="text" id="des" name="des">
+        
+            <label for="category">Category:</label>
+            <select id="cat-val">
+                <option value="Fuel">Fuel</option>
+                <option value="Food">Food</option>
+                <option value="Electricity">Electricity</option>                    <option value="Movie">Movie</option>
+                <option value="Others">Others</option>
+            </select>
+
+            <input type="submit" value="Add Expense" id="signup">
+            
+        </form>
+    </div>
+
+    
+</body>
+</html>
+
